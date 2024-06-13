@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tililenji Foundation</title>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 800px; /* Set the desired width of the slideshow */
+            height: 450px; /* Set the desired height of the slideshow */
+            margin: 0 auto; /* Center the slideshow container horizontally */
+            overflow: hidden;
+        }
+        
+        .slideshow-container img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            max-width: 100%;
+            max-height: 100%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<div class="foundation">
+    <img src="images/IMG-20240428-WA0036.jpg" alt="image" class="image-with-border">
+</div>
+<div>
+    <h3 class="head">Our Mission:</h3>
+    <p><strong>To create healthier and empowered communities by providing comprehensive health education and resources through targeted initiatives leading to reduced disease transmission rates, prevention of early pregnancies and, community empowerment for a sustainable future.</strong> </p>
+</div>
+<div class="slideshow-container">
+    <img src="images/IMG-20240428-WA0032.jpg" alt="image1">
+    <img src="images/IMG-20240428-WA0034.jpg" alt="image2">
+    <img src="images/IMG-20240428-WA0037.jpg" alt="image3">
+    <img src="images/IMG-20240428-WA0038.jpg" alt="image4">
+    <img src="images/IMG-20240428-WA0039.jpg" alt="image5">
+</div>
+<div>
+    <ul>
+        <li><a href="works.html">Our Works</a></li>
+        <li><a href="values.html">What we Value</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li><a href="involvement.html">Get Involved</a></li>
+    </ul>
+</div>
+
+<script>
+    // JavaScript for slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slideshow-container img');
+    
+    function showSlide(index) {
+        // Hide all slides
+        slides.forEach(slide => {
+            slide.style.display = 'none';
+        });
+        // Display the slide at the given index
+        slides[index].style.display = 'block';
+    }
+    
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+    
+    // Initial call to show the first slide
+    showSlide(currentSlide);
+    
+    // Set interval to switch slides every 3 seconds
+    setInterval(nextSlide, 3000);
+</script>
+
+</body>
+</html>
